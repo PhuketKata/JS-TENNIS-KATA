@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/PhuketKata/JS-TENNIS-KATA/issues"
   },
-  "homepage": "https://github.com/PhuketKata/JS-TENNIS-KATA#readme"
+  "homepage": "https://github.com/PhuketKata/JS-TENNIS-KATA#readme",
+  "devDependencies": {
+    "jest": "^23.6.0"
+  }
 }
