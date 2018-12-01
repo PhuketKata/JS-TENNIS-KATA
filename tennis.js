@@ -4,29 +4,44 @@ let scoreB = 0
 const pointTable = ['0', '15', '30', '40','setpoint']
 
 const aGetPoint = () => {
-  scoreA++
-  return setScoreboard(scoreA,scoreB)
+  const playerA = playerScore(scoreA, scoreB)
+  if(playerA('isMatchPoint'))
+    return 'A WIN'
+  else if(playerA('isSetPoint'))
+    scoreB = 3
+  else
+    scoreA++
+  return printScoreBoard(scoreA,scoreB)
 }
-const bGetPoint = () =>{
-  scoreB++
-  return setScoreboard(scoreA,scoreB)
-}
-const setScoreboard = (a,b) =>{
 
-  let scoreLeft = a
-  let scoreRight = b
-  if(b>3 && b === a){
-    scoreLeft = b
-    scoreRight = 3
-  }else if(a>3 && a === b){
-    scoreLeft = a
-    scoreRight = 3
-  }else if(b>a){
-    scoreLeft = b
-    scoreRight = a
-  }
-  return `${pointTable[scoreLeft]} - ${pointTable[scoreRight]}`
+const bGetPoint = () =>{
+  const playerB = playerScore(scoreB, scoreA)
+  if(playerB('isMatchPoint'))
+    return 'B WIN'
+  else if(playerB('isSetPoint'))
+    scoreA = 3
+  else
+    scoreB++
+  return printScoreBoard(scoreA,scoreB)
 }
+
+const playerScore = (player1, player2) => {
+  return (condition) => {
+    if(condition === 'isMatchPoint')
+      return isPlayerMatchPoint(player1, player2)
+    else
+      return isPlayerSetpoint(player1, player2)
+  }
+}
+
+const isPlayerMatchPoint = (player1, player2) =>
+  (player1 === 3 && player2 < 3) || (player1 === 4 && player2 === 3)
+
+const isPlayerSetpoint = (player1, player2) =>
+  (player1 === 3 && player2 === 4) && (scoreA >=3 && scoreB >=3)
+
+const printScoreBoard = (a,b) => `${pointTable[a]} - ${pointTable[b]}`
+
 const resetScore = () => {
   scoreA = 0
   scoreB = 0

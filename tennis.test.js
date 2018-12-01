@@ -76,7 +76,7 @@ test('AGet40AndBGetSetPointPoint', () => {
   bGetPoint()
   bGetPoint()
   const score = bGetPoint()
-  expect(score).toBe('setpoint - 40')
+  expect(score).toBe('40 - setpoint')
 })
 
 test('AGet40AndBGet40PointAfterASetPoint', () => {
@@ -89,7 +89,7 @@ test('AGet40AndBGet40PointAfterASetPoint', () => {
   bGetPoint()
   aGetPoint()
   const score = bGetPoint()
-  expect(score).toBe('setpoint - 40')
+  expect(score).toBe('40 - 40')
 })
 
 test('AGet40AndBGet40PointAfterBSetPoint', () => {
@@ -101,6 +101,6 @@ test('AGet40AndBGet40PointAfterBSetPoint', () => {
   bGetPoint()
   bGetPoint()
   bGetPoint()
-  const score = aGetPoint()
-  expect(score).toBe('setpoint - 40')
+  const score = aGetPoint() //correct
+  expect(score).toBe('40 - 40')
 })
