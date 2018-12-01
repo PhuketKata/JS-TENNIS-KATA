@@ -50,6 +50,19 @@ test('AGet40AndBGet40Point', () => {
   aGetPoint()
   aGetPoint()
   bGetPoint()
+  bGetPoint()
   const score = bGetPoint()
   expect(score).toBe('40 - 40')
+})
+
+test('AGetSetPointAndBGet40Point', () => {
+  const { aGetPoint, bGetPoint } = scoreBoard
+  aGetPoint()
+  aGetPoint()
+  aGetPoint()
+  bGetPoint()
+  bGetPoint()
+  bGetPoint()
+  const score = aGetPoint()
+  expect(score).toBe('setpoint - 40')
 })
