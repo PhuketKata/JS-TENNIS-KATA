@@ -1,7 +1,7 @@
 
 let scoreA = 0
 let scoreB = 0
-const pointTable = ['0', '15', '30', '40']
+const pointTable = ['0', '15', '30', '40','setpoint']
 
 const aGetPoint = () => {
   scoreA++
@@ -12,7 +12,20 @@ const bGetPoint = () =>{
   return setScoreboard(scoreA,scoreB)
 }
 const setScoreboard = (a,b) =>{
-  return `${pointTable[a]} - ${pointTable[b]}`
+
+  let scoreLeft = a
+  let scoreRight = b
+  if(b>3 && b === a){
+    scoreLeft = b
+    scoreRight = 3
+  }else if(a>3 && a === b){
+    scoreLeft = a
+    scoreRight = 3
+  }else if(b>a){
+    scoreLeft = b
+    scoreRight = a
+  }
+  return `${pointTable[scoreLeft]} - ${pointTable[scoreRight]}`
 }
 const resetScore = () => {
   scoreA = 0
