@@ -1,24 +1,26 @@
 const scoreBoard = require('./tennis');
 
-beforeEach(() => {
-  return scoreBoard.resetScore()
-})
-
 test('AGet15PointAndBGet0Point', () => {
-  const { aGetPoint } = scoreBoard
+  const { scoreBoard : createScoreBoard } = scoreBoard
+  const scoreBoardSet = createScoreBoard()
+  const { aGetPoint, bGetPoint } = scoreBoardSet
   const score = aGetPoint()
   expect(score).toBe('15 - 0')
 })
 
 test('AGet30PointAndBGet0Point', () => {
-  const { aGetPoint } = scoreBoard
+  const { scoreBoard : createScoreBoard } = scoreBoard
+  const scoreBoardSet = createScoreBoard()
+  const { aGetPoint, bGetPoint } = scoreBoardSet
   aGetPoint()
   const score = aGetPoint()
   expect(score).toBe('30 - 0')
 })
 
 test('AGet40PointAndBGet0Point', () => {
-  const { aGetPoint } = scoreBoard
+  const { scoreBoard : createScoreBoard } = scoreBoard
+  const scoreBoardSet = createScoreBoard()
+  const { aGetPoint, bGetPoint } = scoreBoardSet
   aGetPoint()
   aGetPoint()
   const score = aGetPoint()
@@ -26,7 +28,9 @@ test('AGet40PointAndBGet0Point', () => {
 })
 
 test('AGet40AndBGet15Point', () => {
-  const { aGetPoint, bGetPoint } = scoreBoard
+  const { scoreBoard : createScoreBoard } = scoreBoard
+  const scoreBoardSet = createScoreBoard()
+  const { aGetPoint, bGetPoint } = scoreBoardSet
   aGetPoint()
   aGetPoint()
   aGetPoint()
@@ -35,7 +39,9 @@ test('AGet40AndBGet15Point', () => {
 })
 
 test('AGet40AndBGet30Point', () => {
-  const { aGetPoint, bGetPoint } = scoreBoard
+  const { scoreBoard : createScoreBoard } = scoreBoard
+  const scoreBoardSet = createScoreBoard()
+  const { aGetPoint, bGetPoint } = scoreBoardSet
   aGetPoint()
   aGetPoint()
   aGetPoint()
@@ -45,7 +51,9 @@ test('AGet40AndBGet30Point', () => {
 })
 
 test('AGet40AndBGet40Point', () => {
-  const { aGetPoint, bGetPoint } = scoreBoard
+  const { scoreBoard : createScoreBoard } = scoreBoard
+  const scoreBoardSet = createScoreBoard()
+  const { aGetPoint, bGetPoint } = scoreBoardSet
   aGetPoint()
   aGetPoint()
   aGetPoint()
@@ -56,7 +64,9 @@ test('AGet40AndBGet40Point', () => {
 })
 
 test('AGetSetPointAndBGet40Point', () => {
-  const { aGetPoint, bGetPoint } = scoreBoard
+  const { scoreBoard : createScoreBoard } = scoreBoard
+  const scoreBoardSet = createScoreBoard()
+  const { aGetPoint, bGetPoint } = scoreBoardSet
   aGetPoint()
   aGetPoint()
   aGetPoint()
@@ -68,7 +78,9 @@ test('AGetSetPointAndBGet40Point', () => {
 })
 
 test('AGet40AndBGetSetPointPoint', () => {
-  const { aGetPoint, bGetPoint } = scoreBoard
+  const { scoreBoard : createScoreBoard } = scoreBoard
+  const scoreBoardSet = createScoreBoard()
+  const { aGetPoint, bGetPoint } = scoreBoardSet
   aGetPoint()
   aGetPoint()
   aGetPoint()
@@ -80,7 +92,9 @@ test('AGet40AndBGetSetPointPoint', () => {
 })
 
 test('AGet40AndBGet40PointAfterASetPoint', () => {
-  const { aGetPoint, bGetPoint } = scoreBoard
+  const { scoreBoard : createScoreBoard } = scoreBoard
+  const scoreBoardSet = createScoreBoard()
+  const { aGetPoint, bGetPoint } = scoreBoardSet
   aGetPoint()
   aGetPoint()
   aGetPoint()
@@ -93,7 +107,9 @@ test('AGet40AndBGet40PointAfterASetPoint', () => {
 })
 
 test('AGet40AndBGet40PointAfterBSetPoint', () => {
-  const { aGetPoint, bGetPoint } = scoreBoard
+  const { scoreBoard : createScoreBoard } = scoreBoard
+  const scoreBoardSet = createScoreBoard()
+  const { aGetPoint, bGetPoint } = scoreBoardSet
   aGetPoint()
   aGetPoint()
   aGetPoint()
