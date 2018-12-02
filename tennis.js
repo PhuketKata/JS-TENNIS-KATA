@@ -1,11 +1,7 @@
-
-let scoreA = 0
-let scoreB = 0
-const pointTable = ['0', '15', '30', '40','setpoint']
-
 const scoreBoard = (function () {
     let scoreA = 0
     let scoreB = 0
+    const pointTable = ['0', '15', '30', '40','setpoint']
 
     const aGetPoint = () => {
       const playerA = playerScore(scoreA, scoreB)
