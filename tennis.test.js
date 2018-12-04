@@ -173,6 +173,6 @@ test('AWINAndBGet40PointWithSetPoint', () => {
   bGetPoint()
   bGetPoint()
   bGetPoint()
-  const score = bGetPointg() //correct
+  const score = bGetPoint() //correct
   expect(score).toBe('B WIN')
 })
