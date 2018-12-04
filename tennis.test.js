@@ -161,3 +161,18 @@ test('AWINAndBGet40PointWithSetPoint', () => {
   const score = aGetPoint() //correct
   expect(score).toBe('A WIN')
 })
+
+test('AWINAndBGet40PointWithSetPoint', () => {
+  const { scoreBoard : createScoreBoard } = scoreBoard
+  const scoreBoardSet = createScoreBoard()
+  const { aGetPoint, bGetPoint } = scoreBoardSet
+  aGetPoint()
+  aGetPoint()
+  aGetPoint()
+  bGetPoint()
+  bGetPoint()
+  bGetPoint()
+  bGetPoint()
+  const score = bGetPoint() //correct
+  expect(score).toBe('B WIN')
+})
